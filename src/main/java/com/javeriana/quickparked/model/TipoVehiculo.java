@@ -24,7 +24,7 @@ public class TipoVehiculo {
     @OneToMany(mappedBy = "tipoVehiculo")
     List<Piso> listaPisos;
 
-    TipoVehiculo(){
+    public TipoVehiculo(){
 
     }
 

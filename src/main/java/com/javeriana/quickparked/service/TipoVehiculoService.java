@@ -8,5 +8,5 @@ import com.javeriana.quickparked.repository.TipoVehiculoRepository;
 @Service
 public class TipoVehiculoService {
     @Autowired
-    TipoVehiculoRepository tipoVehiculoRepository;
+    TipoVehiculoRepository tipoVehiculoRepository;  
 }

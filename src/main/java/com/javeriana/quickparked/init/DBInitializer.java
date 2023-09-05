@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 import com.javeriana.quickparked.model.Parqueadero;
 import com.javeriana.quickparked.model.Piso;
 import com.javeriana.quickparked.model.TipoVehiculo;
+
 import com.javeriana.quickparked.repository.ParqueaderoRepository;
 import com.javeriana.quickparked.repository.PisoRepository;
+import com.javeriana.quickparked.repository.TipoVehiculoRepository;
 import com.javeriana.quickparked.service.ParqueaderoService;
 import com.javeriana.quickparked.service.PisoService;
 
@@ -18,8 +20,12 @@ import jakarta.transaction.Transactional;
 
 @Component
 public class DBInitializer implements CommandLineRunner {
+    TipoVehiculo t;
 
     Logger log = LoggerFactory.getLogger(getClass());
+
+    @Autowired
+    TipoVehiculoRepository tipoVehiculoRepository;
 
     @Autowired
     PisoService pisoService;
@@ -38,16 +44,22 @@ public class DBInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //Datos de Simulación
         //Agregar los 3 tipos de vehiculo
-        TipoVehiculo moto = TipoVehiculo();
-        TipoVehiculo carro = TipoVehiculo();
-        TipoVehiculo bus = TipoVehiculo();
+        TipoVehiculo moto = new TipoVehiculo();
+        TipoVehiculo carro = new TipoVehiculo();
+        TipoVehiculo bus = new TipoVehiculo();
+        moto.setNombre("Moto");
         moto.setAncho(1.0);
         moto.setLargo(2.0);
+        carro.setNombre("Carro");
         carro.setAncho(2.0);
         carro.setLargo(4.0);
+        bus.setNombre("Bus");
         bus.setAncho(2.0);
         bus.setLargo(10.0);
-        
+        tipoVehiculoRepository.save(moto);
+        tipoVehiculoRepository.save(carro);
+        tipoVehiculoRepository.save(bus);
+
 
         //===========PRUEBA CRUD==============
 
@@ -94,9 +106,5 @@ public class DBInitializer implements CommandLineRunner {
 
         //===============PRUEBA ESPECIFICAR TARIFAS==================
 
-    }
-
-    private TipoVehiculo TipoVehiculo() {
-        return null;
     }
 }
