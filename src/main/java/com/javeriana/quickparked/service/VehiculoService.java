@@ -9,6 +9,4 @@ import com.javeriana.quickparked.repository.VehiculoRepository;
 public class VehiculoService {
     @Autowired
     VehiculoRepository vehiculoRepository;
-
-    
 }

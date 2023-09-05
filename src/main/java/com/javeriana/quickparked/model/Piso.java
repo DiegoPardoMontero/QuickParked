@@ -21,9 +21,11 @@ public class Piso {
     @ManyToOne
     Parqueadero parqueaderoAntiguo;
 
-    Double ancho;
+    Integer numPiso;
 
-    Double largo;
+    Double ancho = 50.0;
+
+    Double largo = 50.0;
 
     Integer numEspacios;
 
@@ -32,9 +34,15 @@ public class Piso {
     @OneToMany(mappedBy = "piso")
     List<Vehiculo> listaVehiculos;
 
-    Double porcentajeOcupado;
+    Double porcentajeOcupado = 0.0;
 
-    Integer tarifa;
+    public Piso(){
+
+    }
+
+    public Piso(Integer numPiso){
+        this.numPiso = numPiso;
+    }
 
     public void setAncho(Double ancho) {
         this.ancho = ancho;
@@ -50,15 +58,6 @@ public class Piso {
 
     public void setTipoVehiculo(String tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
-        if(tipoVehiculo == "Moto"){
-            this.setNumEspacios(40);
-        }
-        else if(tipoVehiculo == "Carro"){
-            this.setNumEspacios(20);
-        }
-        else if(tipoVehiculo == "Bus"){
-            this.setNumEspacios(10);
-        }
     }
 
     public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
@@ -69,10 +68,6 @@ public class Piso {
         this.porcentajeOcupado = porcentajeOcupado;
     }
     
-    public void setTarifa(Integer tarifa) {
-        this.tarifa = tarifa;
-    }
-
     public Long getId() {
         return id;
     }
@@ -101,7 +96,27 @@ public class Piso {
         return porcentajeOcupado;
     }
 
-    public Integer getTarifa() {
-        return tarifa;
+    public void setParqueaderoActual(Parqueadero parqueaderoActual) {
+        this.parqueaderoActual = parqueaderoActual;
+    }
+
+    public void setParqueaderoAntiguo(Parqueadero parqueaderoAntiguo) {
+        this.parqueaderoAntiguo = parqueaderoAntiguo;
+    }
+
+    public Parqueadero getParqueaderoAntiguo() {
+        return parqueaderoAntiguo;
+    }
+
+    public Parqueadero getParqueaderoActual() {
+        return parqueaderoActual;
+    }
+
+    public void setNumPiso(Integer numPiso) {
+        this.numPiso = numPiso;
+    }
+    
+    public Integer getNumPiso() {
+        return numPiso;
     }
 }

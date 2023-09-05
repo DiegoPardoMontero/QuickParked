@@ -16,6 +16,12 @@ public class Parqueadero {
 
     String nombre;
 
+    Integer tarifaMoto;
+
+    Integer tarifaCarro;
+
+    Integer tarifaBus;
+
     @OneToMany(mappedBy = "parqueaderoActual")
     List<Piso> listaPisosActual;
 
@@ -34,6 +40,18 @@ public class Parqueadero {
         this.listaPisosPasados = listaPisosPasados;
     }
 
+    public void setTarifaBus(Integer tarifaBus) {
+        this.tarifaBus = tarifaBus;
+    }
+
+    public void setTarifaCarro(Integer tarifaCarro) {
+        this.tarifaCarro = tarifaCarro;
+    }
+
+    public void setTarifaMoto(Integer tarifaMoto) {
+        this.tarifaMoto = tarifaMoto;
+    }
+
     public Long getId() {
         return id;
     }
@@ -48,5 +66,17 @@ public class Parqueadero {
 
     public List<Piso> getListaPisosPasados() {
         return listaPisosPasados;
+    }
+
+    public Integer getTarifaBus() {
+        return tarifaBus;
+    }
+
+    public Integer getTarifaCarro() {
+        return tarifaCarro;
+    }
+
+    public Integer getTarifaMoto() {
+        return tarifaMoto;
     }
 }
