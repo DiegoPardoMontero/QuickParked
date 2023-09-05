@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.javeriana.quickparked.model.Parqueadero;
 import com.javeriana.quickparked.model.Piso;
+import com.javeriana.quickparked.model.TipoVehiculo;
 import com.javeriana.quickparked.repository.ParqueaderoRepository;
 import com.javeriana.quickparked.repository.PisoRepository;
 import com.javeriana.quickparked.service.ParqueaderoService;
@@ -36,8 +37,21 @@ public class DBInitializer implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         //Datos de Simulación
+        //Agregar los 3 tipos de vehiculo
+        TipoVehiculo moto = TipoVehiculo();
+        TipoVehiculo carro = TipoVehiculo();
+        TipoVehiculo bus = TipoVehiculo();
+        moto.setAncho(1.0);
+        moto.setLargo(2.0);
+        carro.setAncho(2.0);
+        carro.setLargo(4.0);
+        bus.setAncho(2.0);
+        bus.setLargo(10.0);
+        
 
         //===========PRUEBA CRUD==============
+
+
 
         //Agregar pisos nuevos PRUEBA CREATE
         Piso piso1 = new Piso(1);
@@ -69,21 +83,20 @@ public class DBInitializer implements CommandLineRunner {
 
         //Recuperar un piso PRUEBA READ
         Piso pisoTres = pisoService.recuperarPiso(3);
-        pisoTres.setTipoVehiculo("Bus");
 
         //Actualizar un piso PRUEBA UPDATE
         pisoService.modificarPiso(3, pisoTres);
     
 
         //================PRUEBA ESPECIFICAR TIPO VEHICULO=====================
-        pisoService.especificarTipoVehiculo(1, "Moto");
-        pisoService.especificarTipoVehiculo(2, "Carro");
-        pisoService.especificarTipoVehiculo(3, "Carro");
-        pisoService.especificarTipoVehiculo(4, "Bus");
+        
 
 
         //===============PRUEBA ESPECIFICAR TARIFAS==================
-        parqueaderoService.especificarTarifas(b, 50, 10, 100);
 
+    }
+
+    private TipoVehiculo TipoVehiculo() {
+        return null;
     }
 }

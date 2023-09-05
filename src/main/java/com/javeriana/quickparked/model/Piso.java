@@ -23,13 +23,14 @@ public class Piso {
 
     Integer numPiso;
 
-    Double ancho = 50.0;
+    Double ancho;
 
-    Double largo = 50.0;
+    Double largo;
 
     Integer numEspacios;
 
-    String tipoVehiculo;
+    @ManyToOne
+    TipoVehiculo tipoVehiculo;
 
     @OneToMany(mappedBy = "piso")
     List<Vehiculo> listaVehiculos;
@@ -56,7 +57,7 @@ public class Piso {
         this.numEspacios = numEspacios;
     }
 
-    public void setTipoVehiculo(String tipoVehiculo) {
+    public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
     }
 
@@ -84,7 +85,7 @@ public class Piso {
         return numEspacios;
     }
 
-    public String getTipoVehiculo() {
+    public TipoVehiculo getTipoVehiculo() {
         return tipoVehiculo;
     }
 
@@ -115,7 +116,7 @@ public class Piso {
     public void setNumPiso(Integer numPiso) {
         this.numPiso = numPiso;
     }
-    
+
     public Integer getNumPiso() {
         return numPiso;
     }

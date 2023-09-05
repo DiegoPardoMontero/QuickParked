@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javeriana.quickparked.model.Piso;
+import com.javeriana.quickparked.model.TipoVehiculo;
 import com.javeriana.quickparked.repository.PisoRepository;
 
 @Service
@@ -29,18 +30,9 @@ public class PisoService {
         pisoRepository.deleteByNumPiso(numPiso);
     }
 
-    public void especificarTipoVehiculo(Integer numPiso, String tipoVehiculo){
+    public void especificarTipoVehiculo(Integer numPiso, TipoVehiculo tipoVehiculo){
         Piso piso = recuperarPiso(numPiso);
         piso.setTipoVehiculo(tipoVehiculo);
-        if(tipoVehiculo.equals("Moto")){
-            piso.setNumEspacios(40);
-        }
-        else if(tipoVehiculo.equals("Carro")){
-            piso.setNumEspacios(20);
-        }
-        else if(tipoVehiculo.equals("Bus")){
-            piso.setNumEspacios(10);
-        }
         pisoRepository.save(piso);
     }
 }

@@ -14,11 +14,4 @@ public class ParqueaderoService {
     public Parqueadero recuperarParqueadero(Long id){
         return parqueaderoRepository.findById(id).orElseThrow();
     }
-
-    public void especificarTarifas(Long id, Integer tarifaCarro, Integer tarifaMoto, Integer tarifaBus){
-        Parqueadero parqueadero = recuperarParqueadero(id);
-        parqueadero.setTarifaBus(tarifaBus);
-        parqueadero.setTarifaCarro(tarifaCarro);
-        parqueadero.setTarifaMoto(tarifaMoto);
-    }
 }
