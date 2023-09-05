@@ -1,4 +1,9 @@
 # QuickParked⚡🚗🏍🚌
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.13-brightgreen)
+![Maven](https://img.shields.io/badge/Maven-3.8.1-blue)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.0-green)
+![H2](https://img.shields.io/badge/H2-1.4.200-blue)
 
 Este proyecto es un sistema de información para gestionar un parqueadero que tiene varios pisos, cada uno destinado a un tipo específico de vehículo: automóviles, buses y motos. El sistema permite al administrador revisar y reorganizar los pisos según la ocupación y demanda.
 
