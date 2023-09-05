@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background: #F5FAFE;
+}
+
+h1{
+    color: #438f9c ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 70px;
+    margin-top:90px;
+    margin-bottom: 20px;
+    text-align: left;
+    
+}  
+
+h3{
+    color: #555555 ;
+    font-size: 16px;
+    margin: 5px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+p{
+
+    color:#555555;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+
+}
+
+.containerTabla{
+    margin-top: 25px;
+}
+
+.tableData{
+    margin-top: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    border-collapse: collapse; /* Para unir los bordes de las celdas */
+    width: 70%; /* Ancho de la tabla */
+    margin-bottom: 20px;
+}
+
+/* Estilo  celdas */
+.tableData th, .tableData td {
+    border: 1px solid #ddd; /* Agregar bordes a las celdas */
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: center;
+}
+
+/* Estilo para el encabezado */
+.tableData th {
+    background-color: #008996; /* Color de fondo para los encabezados */
+    color: white;
+}
+
+.frameTarifas{ 
+    margin-top: 25px;
+    margin-left: 75px;
+    width: 800px;
+    height: 240px;
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra negra con 10% de opacidad */
+    padding: 20px; /* Espaciado interno (ajusta según tus necesidades) */
+}
+.frameEspacios{ 
+    margin-top: 25px;
+    margin-left: 75px;
+    margin-bottom: 50px;
+    width: 800px;
+    height: 290px;
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra negra con 10% de opacidad */
+    padding: 20px; /* Espaciado interno (ajusta según tus necesidades) */
+}

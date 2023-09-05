@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Admisión</title>
+        <link rel="stylesheet" href="css\admision.css">
+        <link rel="stylesheet" href="css\barraMenu.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li class="title">QuickedParked</li>
+                <li><a href="admisionPortero.html">Admisión</a></li>
+                <li><a href="salidaPortero.html">Salida</a></li>
+                <li><a href="home.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        
+        <h1 class="CrearP">Ingreso Vehículo </h1>
+
+        <div class="frameIngreso">
+            <h3>Ingresa la placa del vehículo que desea ingresar, junto con el tipo de vehículo </p>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtNumPiso">Placa</label>
+                    <input type = "text" name="numPiso" id="txtNumPiso">
+                </form>
+            </div>
+            <div class="containerTexto">
+                <form>
+                    <label for="txtHoraIngreso">Hora Ingreso</label>
+                    <input type = "text" name="numHoraIngreso" id="txtHoraIngreso">
+                </form>
+            </div>
+
+
+            <div class="containerSelect">
+                <label for="vehicle">Elija un vehículo:</label>
+                <div class="select-box">
+                    <select>
+                      <option value="carro">Carro</option>
+                      <option value="bus">Bus</option>
+                      <option value="moto">Moto</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="containerTabla">
+                <table class="tableData" >
+                    <thead>
+                        <tr>
+                            <th>Indicar al conductor estacionar en el piso</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="containerBoton">
+                <a href="admisionPortero.html" class="botonEnviar">Ingresar</a>
+            </div>
+            
+        </div>
+
+    </body>
+</html>

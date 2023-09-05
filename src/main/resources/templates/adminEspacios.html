@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Administrador Espacios</title>
+        <link rel="stylesheet" href="css\adminEspacios.css">
+        <link rel="stylesheet" href="css\barraMenu.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li class="title">QuickedParked</li>
+                <li><a href="adminEspacios.html">Administrador de Espacios</a></li>
+                <li><a href="admision.html">Admisión</a></li>
+                <li><a href="salida.html">Salida</a></li>
+                <li><a href="tarifasEspacio.html">Tarifas y espacios</a></li>
+                <li><a href="home.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <h1>Pisos Creados</h1>
+
+        <div class="frameMirarPiso">
+            <h3>Visualiza los pisos que ya has creado, recuerda que cada piso tiene su número y su tipo de vehículo </p>
+                <table class="tableData" >
+                    <thead>
+                        <tr>
+                            <th>Número de piso</th>
+                            <th>Tipo de vehículo</th>
+                            <th>Cupos disponibles por piso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Motos</td>
+                            <td>40</td>
+                        </tr>
+                
+                        <tr>
+                            <td>2</td>
+                            <td>Carros</td>
+                            <td>20</td>
+                        </tr>
+                       
+                        <tr>
+                            <td>3</td>
+                            <td>Carros</td>
+                            <td>20</td>
+                        </tr>
+                
+                        <tr>
+                            <td>4</td>
+                            <td>Buses</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+        </div>
+
+        
+        <h1 class="CrearP">Crear Piso</h1>
+
+        <div class="frameCrearPiso">
+            <h3>Escoge el número del piso a crear y especifíca el tipo de vehículo al que le pertenece</p>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtNumPiso">Numero de Piso</label>
+                    <input type = "text" name="numPiso" id="txtNumPiso">
+                </form>
+            </div>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtAncho">Ancho</label>
+                    <input type = "text" name="anchoPiso" id="txtAncho">
+                </form>
+            </div>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtLargo">Largo</label>
+                    <input type = "text" name="largoPiso" id="txtLargo">
+                </form>
+            </div>
+
+            <div class="containerBoton">
+                <a href="adminEspacios.html" class="botonEnviar">Crear Piso</a>
+            </div>
+            
+        </div>
+
+        <h1>Especificar tipo de vehículo a un piso</h1>
+
+        <div class="frameCalcular">
+            <h3>Podrás Especificar que tipo de vehículo corresponde a uno de los pisos que ya creaste, al darle guardar, podrás visualizar los cupos disponibles en la seccion pisos creados </p>
+
+            <div class="containerSelect">
+                <label for="vehicle">Elija un piso:</label>
+                <div class="select-box">
+                    <select>
+                      <option value="Motos">1</option>
+                      <option value="Carros">2</option>
+                      <option value="Carros">3</option>
+                      <option value="Buses">4</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="containerSelect">
+                <label for="vehicle">Elija un vehículo:</label>
+                <div class="select-box">
+                    <select>
+                      <option value="carro">Carro</option>
+                      <option value="bus">Bus</option>
+                      <option value="moto">Moto</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="containerBoton">
+                <a href="adminEspacios.html" class="botonEnviar">Guardar</a>
+            </div>
+            
+        </div>
+
+        <h1>Editar Piso</h1>
+
+        <div class="frameEditarPiso">
+            <h3>Escoge el número del piso a crear y especifíca el tipo de vehículo al que le pertenece</p>
+
+                <div class="containerSelect">
+                    <label for="vehicle">Elija un piso:</label>
+                    <div class="select-box">
+                        <select>
+                          <option value="Motos">1</option>
+                          <option value="Carros">2</option>
+                          <option value="Carros">3</option>
+                          <option value="Buses">4</option>
+                        </select>
+                      </div>
+                </div>
+
+            <div class="containerSelect">
+                <label for="vehicle">Elija un vehículo:</label>
+                <div class="select-box">
+                    <select>
+                      <option value="carro">Carro</option>
+                      <option value="bus">Bus</option>
+                      <option value="moto">Moto</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="containerBoton">
+                <a href="adminEspacios.html" class="botonEnviar">Editar Piso</a>
+            </div>
+            
+        </div>
+
+
+        <h1>Borrar Piso</h1>
+
+        <div class="frameBorrarPiso">
+            <h3>Ingresa el número del piso que quieres borrar </p>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtNumPiso">Numero de Piso</label>
+                    <input type = "text" name="numPiso" id="txtNumPiso">
+                </form>
+            </div>
+
+            <div class="containerBoton">
+                <a href="adminEspacios.html" class="botonEnviar">Borrar Piso</a>
+            </div>
+            
+        </div>
+
+        
+
+
+
+        <h1>Especificar tarifas por minuto por tipo de vehículo</h1>
+
+        <div class="frameTarifa">
+            <h3>Ingresa la tarifa para cada uno de los tipos de vehículos </p>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtTarifaMoto">Tarifa Moto</label>
+                    <input type = "text" name="tarifaMoto" id="txtTarifaMoto">
+                </form>
+            </div>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtTarifaCarro">Tarifa Carro</label>
+                    <input type = "text" name="tarifaCarro" id="txtTarifaCarro">
+                </form>
+            </div>
+
+            <div class="containerTexto">
+                <form>
+                    <label for="txtTarifaBus">Tarifa Bus</label>
+                    <input type = "text" name="tarifaBus" id="txtTarifaBus">
+                </form>
+            </div>
+
+            <div class="containerBoton">
+                <a href="adminEspacios.html" class="botonEnviar">Enviar</a>
+            </div>
+            
+        </div>
+
+
+
+    </body>
+</html>

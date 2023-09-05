@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background: #F5FAFE;
+}
+
+h1{
+    color: #438f9c ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 70px;
+    margin-top:90px;
+    margin-bottom: 20px;
+    text-align: left;
+    
+}  
+
+h3{
+    color: #555555 ;
+    font-size: 16px;
+    margin: 5px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+p{
+
+    color:#555555;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+
+}
+
+.containerTabla{
+    margin-top: 30px;
+}
+
+.tableData{
+    margin-top: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    border-collapse: collapse; /* Para unir los bordes de las celdas */
+    width: 70%; /* Ancho de la tabla */
+    margin-bottom: 20px;
+}
+
+/* Estilo  celdas */
+.tableData th, .tableData td {
+    border: 1px solid #ddd; /* Agregar bordes a las celdas */
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: center;
+}
+
+/* Estilo para el encabezado */
+.tableData th {
+    background-color: #008996; /* Color de fondo para los encabezados */
+    color: white;
+}
+
+.frameIngreso{ 
+    margin-top: 25px;
+    margin-left: 75px;
+    width: 800px;
+    height: 330px;
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra negra con 10% de opacidad */
+    padding: 20px; /* Espaciado interno (ajusta según tus necesidades) */
+}
+
+
+.containerTexto{
+
+    margin-top: 25px;
+}
+
+.containerSelect{
+
+    margin-top: 25px;
+}
+  /* Estilo para la etiqueta */
+  label {
+    font-family: 'Poppins', sans-serif; /* Fuente personalizada */
+    font-size: 16px;
+    font-weight: bold;
+    color: #438f9c;
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+
+
+/* Estilos para la caja de selección */
+.select-box {
+    display: inline-block;
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #cdeff1; /* Fondo azul */
+    width: 80px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif; /* Fuente personalizada */
+    position: relative; /* Agregar posición relativa para ajustar la flecha */
+}
+
+/* Estilos para el elemento select dentro de la caja */
+.select-box select {
+    border: none; /* Eliminar borde predeterminado */
+    background: none; /* Eliminar fondo predeterminado */
+    color: #438f9c; /* Color de texto */
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif; /* Fuente personalizada */
+    cursor: pointer;
+    outline: none; /* Eliminar el contorno al hacer clic */
+    appearance: none; /* Eliminar el estilo nativo de la caja de selección */
+    /* Agregar un margen derecho para la flecha */
+    padding-right: 30px;
+}
+
+/* Estilo para las opciones */
+.select-box select option {
+    background-color: #cdeff1; /* Fondo azul para opciones */
+    color: #438f9c; /* Color de texto para opciones */
+}
+
+/* Estilo para la flecha desplegable */
+.select-box::after {
+    content: '\25BC'; /* Código Unicode para una flecha hacia abajo */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta el espacio de la flecha a la derecha */
+    transform: translateY(-50%);
+    color: #438f9c; /* Color de la flecha */
+    pointer-events: none; /* Evitar interacciones con la flecha */
+}
+.containerBoton{
+    margin-top: 35px;
+}
+
+.botonEnviar {
+    justify-content: center;
+    background-color: #438f9c; /* Cambia el color de fondo del botón */
+    color: #cdeff1; /* Cambia el color del texto del botón */
+    font-family: 'Poppins', sans-serif; /* Cambia la tipografía del botón */
+    font-size: 16px; /* Cambia el tamaño de fuente del botón */
+    padding: 10px 20px; /* Añade espaciado interno al botón */
+    border: none; /* Elimina el borde del botón si lo tienes */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Agrega esquinas redondeadas al botón */
+  }
+  .botonEnviar:hover {
+    background-color: #034a51; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+  }
