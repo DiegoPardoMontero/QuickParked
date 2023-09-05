@@ -44,19 +44,22 @@ Este proyecto es un sistema de información para gestionar un parqueadero que ti
 ## Cómo Empezar 🚀
 
 1. **Clonar el Repositorio**:
-´´´
+
+```
 git clone [URL-del-repositorio]
-´´´
+```
 
 2. **Navegar al Directorio del Proyecto**:
-
-´´´
+   
+```
 cd [nombre-del-proyecto]
-´´´
+```
 
 3. **Ejecutar la Aplicación con Spring Boot**:
-´´´
+   
+```
 ./mvnw spring-boot:run
+```
 
 4. **Acceder a la Aplicación**:
 Abre tu navegador y visita `http://localhost:8080`.
