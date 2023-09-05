@@ -50,6 +50,15 @@ public class Piso {
 
     public void setTipoVehiculo(String tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
+        if(tipoVehiculo == "Moto"){
+            this.setNumEspacios(40);
+        }
+        else if(tipoVehiculo == "Carro"){
+            this.setNumEspacios(20);
+        }
+        else if(tipoVehiculo == "Bus"){
+            this.setNumEspacios(10);
+        }
     }
 
     public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
