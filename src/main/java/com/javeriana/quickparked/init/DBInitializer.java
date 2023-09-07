@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.javeriana.quickparked.model.Parqueadero;
 import com.javeriana.quickparked.model.Piso;
 import com.javeriana.quickparked.model.TipoVehiculo;
 
@@ -74,37 +73,5 @@ public class DBInitializer implements CommandLineRunner {
         pisoService.guardarPiso(piso2);
         pisoService.guardarPiso(piso3);
         pisoService.guardarPiso(piso4);
-
-        //Agregar nuevo parqueadero
-        Parqueadero parqueadero = new Parqueadero();
-        parqueaderoRepository.save(parqueadero);
-
-        //Borrar un piso PRUEBA DELETE
-        pisoService.eliminarPiso(2);
-
-        //Agrega de nuevo el piso eliminado
-        pisoService.guardarPiso(new Piso(2));
-
-        //Vinculación de los pisos con el parqueadero
-        long b = 1;
-        Parqueadero par = parqueaderoService.recuperarParqueadero(b);
-        for (Piso piso : pisoRepository.findAll()){
-            piso.setParqueaderoActual(par);
-            pisoRepository.save(piso);
-        }
-
-        //Recuperar un piso PRUEBA READ
-        Piso pisoTres = pisoService.recuperarPiso(3);
-
-        //Actualizar un piso PRUEBA UPDATE
-        pisoService.modificarPiso(3, pisoTres);
-    
-
-        //================PRUEBA ESPECIFICAR TIPO VEHICULO=====================
-        
-
-
-        //===============PRUEBA ESPECIFICAR TARIFAS==================
-
     }
 }

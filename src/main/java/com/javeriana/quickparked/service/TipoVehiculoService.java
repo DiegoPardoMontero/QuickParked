@@ -42,7 +42,11 @@ public class TipoVehiculoService {
     
         guardarTipoVeh(tipoVehiculoModificar);
     }
-    
+
+    public TipoVehiculo recuperarTipoVeh(String name){
+        TipoVehiculo t = tipoVehiculoRepository.findByNombre(name);
+        return t;
+    }
 
     public void eliminarPiso(Long id){
         tipoVehiculoRepository.deleteById(id);

@@ -1,10 +1,11 @@
 package com.javeriana.quickparked.service;
 
+import java.lang.reflect.Field;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javeriana.quickparked.model.Piso;
-import com.javeriana.quickparked.model.TipoVehiculo;
 import com.javeriana.quickparked.repository.PisoRepository;
 
 @Service
@@ -18,7 +19,25 @@ public class PisoService {
 
     public void modificarPiso(Integer numPiso, Piso pisoModificado){
         Piso pisoModificar = recuperarPiso(numPiso);
-        pisoModificar = pisoModificado;
+        pisoModificar.setTipoVehiculo(pisoModificado.getTipoVehiculo());
+
+        for (Field field : Piso.class.getDeclaredFields()) {
+            field.setAccessible(true); // Permite acceder a campos privados
+    
+            try {
+                Object newValue = field.get(pisoModificar);
+                Object oldValue = field.get(pisoModificado);
+    
+                // Si el nuevo valor no es null y es diferente al valor antiguo, actualizamos el campo
+                if (newValue != null && !newValue.equals(oldValue)) {
+                    field.set(pisoModificar, newValue);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace(); // O maneja la excepción de la manera que prefieras
+            
+            }
+        }
+
         guardarPiso(pisoModificar);
     }
 
@@ -28,11 +47,5 @@ public class PisoService {
 
     public void eliminarPiso(Integer numPiso){
         pisoRepository.deleteByNumPiso(numPiso);
-    }
-
-    public void especificarTipoVehiculo(Integer numPiso, TipoVehiculo tipoVehiculo){
-        Piso piso = recuperarPiso(numPiso);
-        piso.setTipoVehiculo(tipoVehiculo);
-        pisoRepository.save(piso);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.javeriana.quickparked.model.Piso;
 import com.javeriana.quickparked.model.TipoVehiculo;
+import com.javeriana.quickparked.service.PisoService;
 import com.javeriana.quickparked.service.TipoVehiculoService;
 
 @Controller
@@ -18,6 +19,9 @@ import com.javeriana.quickparked.service.TipoVehiculoService;
 public class AdminEspaciosController {
     @Autowired
     public TipoVehiculoService tipoVehiculoService;
+
+    @Autowired
+    public PisoService pisoService;
 
     @GetMapping("/cargarPagina")
     public ModelAndView listarTarifas() {
@@ -31,8 +35,19 @@ public class AdminEspaciosController {
 
     @PostMapping("/saveTarifa")
     public RedirectView guardarTarifa(@ModelAttribute TipoVehiculo tipoVeh) {
-        System.out.println("ID recibido: " + tipoVeh.getId()); // Solo para depuración
         tipoVehiculoService.modificarTipoVeh(tipoVeh.getId(), tipoVeh);        
         return new RedirectView("/adminEspacios/cargarPagina");
     }   
+
+    
+    @PostMapping("/especificarTipo")
+    public RedirectView especificarTipo(@ModelAttribute Piso piso) {
+        TipoVehiculo t = tipoVehiculoService.recuperarTipoVeh(piso.getTipoVehiculo().getNombre());
+        piso.setTipoVehiculo(t);
+        pisoService.modificarPiso(piso.getNumPiso(), piso);
+        return new RedirectView("/adminEspacios/cargarPagina");
+    }   
+
+
 }
+

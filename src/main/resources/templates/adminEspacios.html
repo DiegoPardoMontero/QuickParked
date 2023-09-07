@@ -98,32 +98,27 @@
         <div class="frameCalcular">
             <h3>Podrás Especificar que tipo de vehículo corresponde a uno de los pisos que ya creaste, al darle guardar, podrás visualizar los cupos disponibles en la seccion pisos creados </p>
 
-            <div class="containerSelect">
-                <label for="vehicle">Elija un piso:</label>
-                <div class="select-box">
-                    <select>
-                      <option value="Motos">1</option>
-                      <option value="Carros">2</option>
-                      <option value="Carros">3</option>
-                      <option value="Buses">4</option>
-                    </select>
-                  </div>
-            </div>
+            
+            <form th:action="@{/adminEspacios/especificarTipo}" method="post">
+                <label for="txtNumPiso">Escriba un piso</label>
+                <input type = "text" name="numPiso" id="txtNumPiso" th:field="${piso.numPiso}">
+                <div class="containerSelect">
+                    <label for="vehicle">Elija un vehículo:</label>
+                    <div class="select-box">
+                        <select name="tipoVehiculo.nombre" th:field="${piso.tipoVehiculo.nombre}">
+                            <option value="Carro">Carro</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Moto">Moto</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="containerBoton">
+                    <button class="botonEnviar">   
+                        Enviar
+                    </button>
+                </div>
 
-            <div class="containerSelect">
-                <label for="vehicle">Elija un vehículo:</label>
-                <div class="select-box">
-                    <select>
-                      <option value="carro">Carro</option>
-                      <option value="bus">Bus</option>
-                      <option value="moto">Moto</option>
-                    </select>
-                  </div>
-            </div>
-
-            <div class="containerBoton">
-                <a href="adminEspacios.html" class="botonEnviar">Guardar</a>
-            </div>
+            </form>
             
         </div>
 
@@ -131,7 +126,6 @@
 
         <div class="frameEditarPiso">
             <h3>Escoge el número del piso a crear y especifíca el tipo de vehículo al que le pertenece</p>
-
                 <div class="containerSelect">
                     <label for="vehicle">Elija un piso:</label>
                     <div class="select-box">
