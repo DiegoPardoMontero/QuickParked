@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Administrador Espacios</title>
-        <link rel="stylesheet" href="css\adminEspacios.css">
-        <link rel="stylesheet" href="css\barraMenu.css">
+        <link rel="stylesheet" href="css/adminEspacios.css">
+        <link rel="stylesheet" href="css/barraMenu.css">
     </head>
 
     <body>
@@ -22,7 +22,7 @@
         <h1>Pisos Creados</h1>
 
         <div class="frameMirarPiso">
-            <h3>Visualiza los pisos que ya has creado, recuerda que cada piso tiene su número y su tipo de vehículo </p>
+            <h3>Visualiza los pisos que ya has creado, recuerda que cada piso tiene su número y su tipo de vehículo </h3>
                 <table class="tableData" >
                     <thead>
                         <tr>
@@ -189,30 +189,44 @@
             <h3>Ingresa la tarifa para cada uno de los tipos de vehículos </p>
 
             <div class="containerTexto">
-                <form>
+                <form th:action="@{/adminEspacios/saveTarifa}" method="post">
                     <label for="txtTarifaMoto">Tarifa Moto</label>
-                    <input type = "text" name="tarifaMoto" id="txtTarifaMoto">
+                    <input type = "text" name="tarifa" id="txtTarifaMoto" th:field="${tipoVeh.tarifa}">
+                    <input type="hidden" name="id" value="1">
+                    <div class="containerBoton">
+                        <button class="botonEnviar">
+                            Enviar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <div class="containerTexto">
-                <form>
+                <form th:action="@{/adminEspacios/saveTarifa}" method="post">
                     <label for="txtTarifaCarro">Tarifa Carro</label>
-                    <input type = "text" name="tarifaCarro" id="txtTarifaCarro">
+                    <input type = "text" name="tarifa" id="txtTarifaCarro" th:field="${tipoVeh.tarifa}">
+                    <input type="hidden" name="id" value="2">
+                    <div class="containerBoton">
+                        <button class="botonEnviar">
+                            Enviar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <div class="containerTexto">
-                <form>
+                <form th:action="@{/adminEspacios/saveTarifa}" method="post">
                     <label for="txtTarifaBus">Tarifa Bus</label>
-                    <input type = "text" name="tarifaBus" id="txtTarifaBus">
+                    <input type = "text" name="tarifa" id="txtTarifaBus" th:field="${tipoVeh.tarifa}">
+                    <input type="hidden" name="id" value="3">
+                    <div class="containerBoton">
+                        <button class="botonEnviar">
+                            Enviar
+                        </button>
+                    </div>
                 </form>
             </div>
-
-            <div class="containerBoton">
-                <a href="adminEspacios.html" class="botonEnviar">Enviar</a>
-            </div>
-            
+        
         </div>
 
 
